@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.min.js"></script>
+    <script src="Sheet.js"></script>
+    <!-- ml5 -->
+    <script src="https://unpkg.com/ml5@0.12.2/dist/ml5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <main></main>
+    <div id="intro">
+    <h1>Crea la tua Rete Neurale</h1>
+    </div>
+    <div id="dataset-form">
+      
+      
+      <form>
+        <h2>Dataset</h2>
+        <div>
+        <p>È importante che l'ultima colonna del tuo dataset sia l'output che desideri ottenere dalla tua AI. Puoi prendere ispirazione da questi esempi:
+        </p>
+          <ul id="esempi">
+            <li><a onclick="document.querySelector('#google-sheets-url').value='https://docs.google.com/spreadsheets/d/1WIHjaWCqliacfs6dK8Xpz-xwOz_tISoXTIXkaeLUtfs/edit#gid=0'">🌡️ Misuriamo la febbre</a><a href="https://docs.google.com/spreadsheets/d/1WIHjaWCqliacfs6dK8Xpz-xwOz_tISoXTIXkaeLUtfs/edit#gid=0" target="_blank">📂</a></li>
+          <li><a onclick="document.querySelector('#google-sheets-url').value='https://docs.google.com/spreadsheets/d/1x2Gcn100kDRd0_RbC_J67ti3tQ8ZGzpzrTBnRq1_M54/edit#gid=0'">👩‍🏫 Confort in aula</a><a href="https://docs.google.com/spreadsheets/d/1x2Gcn100kDRd0_RbC_J67ti3tQ8ZGzpzrTBnRq1_M54/edit#gid=0" target="_blank">📂</a></li>
+             <li><a onclick="document.querySelector('#google-sheets-url').value='https://docs.google.com/spreadsheets/d/1VklyL0-IFEZ5JACgST_UhT92N28nql9CJfdvrgOj1rQ/edit#gid=0'">🐄 Produzione Latte</a><a href="https://docs.google.com/spreadsheets/d/1VklyL0-IFEZ5JACgST_UhT92N28nql9CJfdvrgOj1rQ/edit#gid=0" target="_blank">📂</a></li>
+        </ul>
+        </div>
+        <div class="url-container">
+          <label for="google-sheets-url"
+            ><span class="icon">📊</span> Dataset URL</label
+          >
+          <input
+            type="text"
+            name="google-sheets-url"
+            id="google-sheets-url"
+            value="https://docs.google.com/spreadsheets/d/1WIHjaWCqliacfs6dK8Xpz-xwOz_tISoXTIXkaeLUtfs/edit#gid=0"
+            required
+          />
+        </div>
+        <div>
+          <label for="epochs"><span class="icon">⏲️</span> Iterazioni</label>
+          <input type="number" value="30" name="epochs" id="epochs" required />
+        </div>
+        <div>
+          <div>
+            <button type="submit">Train</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="model-stats"></div>
+    <div id="prediction-container">
+    <div id="prediction-form"  style="display: none"></div>
+    <div id="prediction-result" style="display: none"></div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>
