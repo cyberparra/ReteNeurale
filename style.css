@@ -186,6 +186,12 @@ h1 {
   font-size: 1.5em;
 }
 
+.credit{
+  text-align: center;
+  font-size: 100%;
+  color: #d41f1f;
+}
+
 button.mini {
   background-color: unset;
   color: #666;
